@@ -9,7 +9,7 @@ const Cover = ({ img, title, subTitle }) => {
         bgImageAlt="the dog"
         strength={-200}
     >
-        <div className="hero h-[500px]" >
+        <div className="hero h-[400px]" >
             <div className="cover-text px-36 py-16 text-center text-neutral-content">
                 <div className="max-w-md">
                     <h1 className="mb-5 text-5xl font-bold uppercase">{title}</h1>
