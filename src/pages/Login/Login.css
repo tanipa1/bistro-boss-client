@@ -1,0 +1,7 @@
+.login-box {
+    background: url(../../assets/others/authentication.png);
+    box-shadow: 10px 10px 10px 10px rgba(0, 0, 0, 0.25);
+}
+.hero{
+    background: url(../../assets/others/authentication.png);
+}

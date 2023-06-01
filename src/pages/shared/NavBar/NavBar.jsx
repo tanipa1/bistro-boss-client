@@ -4,6 +4,7 @@ const NavBar = () => {
     const navItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
+        <li><Link to="/order/salad">Order Food</Link></li>
     </>
     return (
         <div className="navbar fixed z-10 bg-opacity-60 bg-black text-white">
@@ -21,14 +22,11 @@ const NavBar = () => {
                     <p className="uppercase">R e s t a u r a n t</p>
                 </a>
             </div>
-            <div className="navbar-center hidden lg:flex">
+            <div className="navbar-end hidden lg:flex">
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
-                {/* 2:38 */}
-            </div>
-            <div className="navbar-end">
-                <a className="btn">Get started</a>
+                <Link className="mr-8" to="/login">Login</Link>
             </div>
         </div>
     );
