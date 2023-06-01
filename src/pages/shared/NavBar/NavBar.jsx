@@ -1,6 +1,25 @@
+import { useContext } from "react";
 import { Link } from "react-router-dom";
+import { AuthContext } from "../../../Providers/AuthProvider";
+import Swal from "sweetalert2";
 
 const NavBar = () => {
+    const {user, logOut} = useContext(AuthContext);
+    const handleLogOut = () =>{
+        logOut()
+        .then(() =>{
+            Swal.fire({
+                title: 'Error!',
+                text: 'Log Out',
+                icon: 'error',
+                confirmButtonText: 'Ok'
+              })
+        })
+        .catch(error =>{
+            console.log(error);
+        })
+    }
+
     const navItems = <>
         <li><Link to="/">Home</Link></li>
         <li><Link to="/menu">Menu</Link></li>
@@ -26,7 +45,9 @@ const NavBar = () => {
                 <ul className="menu menu-horizontal px-1">
                     {navItems}
                 </ul>
-                <Link className="mr-8" to="/login">Login</Link>
+                {
+                    user? <><button onClick={handleLogOut}>Logout</button></>: <><Link className="mr-8" to="/login">Login</Link></>
+                }
             </div>
         </div>
     );
