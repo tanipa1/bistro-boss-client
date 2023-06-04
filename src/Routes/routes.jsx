@@ -5,6 +5,8 @@ import Menu from "../pages/Menu/Menu/Menu";
 import Order from "../pages/Order/Order/Order";
 import Login from "../pages/Login/Login";
 import Register from "../pages/Register/Register";
+import Dashboard from "../Layouts/Dashboard";
+import MyCart from "../pages/Dashboard/MyCart/MyCart";
 import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
@@ -30,10 +32,20 @@ const router = createBrowserRouter([
       },
       {
         path: '/order/:category',
-        element: <PrivateRoute><Order></Order></PrivateRoute>
+        element: <Order></Order>
       },
     ]
   },
+  {
+    path: 'dashboard',
+    element: <PrivateRoute><Dashboard></Dashboard></PrivateRoute>,
+    children: [
+      {
+        path: 'myCart',
+        element: <MyCart></MyCart>
+      }
+    ]
+  }
 ]);
 
 export default router
