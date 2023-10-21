@@ -7,12 +7,13 @@ import { useContext } from "react";
 import { AuthContext } from "../../Providers/AuthProvider";
 import { Helmet } from "react-helmet-async";
 import Swal from "sweetalert2";
+import SocialLogin from "../shared/SocialLogin/SocialLogin";
 
 const Login = () => {
-    const navigate = useNavigate();
-    const location = useLocation();
     const { signIn } = useContext(AuthContext);
     const [disabled, setDisabled] = useState(true);
+    const navigate = useNavigate();
+    const location = useLocation();
 
     const from = location.state?.from?.pathname || "/";
 
@@ -91,6 +92,7 @@ const Login = () => {
                                 <input disabled={disabled} type="submit" className="btn border-0 bg-[#D1A054]" value="Sign In" />
                             </div>
                             <p className="text-center text-[#D1A054]">New here? <Link to='/register'>Create a New Account</Link></p>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>

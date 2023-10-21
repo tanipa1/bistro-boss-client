@@ -5,6 +5,7 @@ import { AuthContext } from '../../Providers/AuthProvider';
 import { useForm } from "react-hook-form";
 import { Helmet } from 'react-helmet-async';
 import Swal from 'sweetalert2';
+import SocialLogin from '../shared/SocialLogin/SocialLogin';
 
 const Register = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -100,6 +101,7 @@ const Register = () => {
                                 <input type="submit" className="btn border-0 bg-[#D1A054]" value="Sign Up" />
                             </div>
                             <p className="text-center text-[#D1A054]">Already registered? <Link to='/login'>Go to log in</Link></p>
+                            <SocialLogin></SocialLogin>
                         </form>
                     </div>
                 </div>
